@@ -31,6 +31,7 @@
          url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
     font-display: swap;
 } 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 :root{
     --colorGreen : #cedfc3;
     --colorDGreen :#647468;
@@ -49,6 +50,12 @@ body{
     margin: 0 auto;
 }
 
+.d-flex{display: flex !important;}
+.flex-wrap{flex-wrap: wrap !important;}
+.jcb{justify-content: space-between !important;}
+.jcc{justify-content: center !important;}
+aic{align-items: center !important;}
+.w-100{width: 100% !important;}
 #mainbanner{
     background: url(../img/bg.jpg) no-repeat;
     background-size: cover;
@@ -83,20 +90,21 @@ body{
     font-size: 1.5rem;
     line-height: 1.2;
     justify-content: center;
+    margin-bottom: 6rem;
 }
 
 .description li{
     display: inline-block;
     background-color: var(--colorGreen);
     flex-grow: 1;/*나머지 영역만큼 늘어나거나 축소한다*/
-    margin: 0 0.5rem;
+    margin: 0 1.5rem;
     padding: 1rem;
     background-repeat:no-repeat;
     background-size: auto 50%;
     background-position: top right;
     border: 1.5rem solid var(--colorGreen);
-    max-width: 10rem;
-    
+    max-width: 16rem;
+    box-shadow: 8px 8px 10px rgba(185, 182, 182, 0.913);
 }
 .description li p{
     color: var(--colorDGreen);
@@ -112,6 +120,21 @@ body{
 .description .face3{
     background-image: url(../img/face3.png);
 }
+.description li:before{
+    display: block;
+    background-color: var(--colorBg);
+    color: var(--colorDGreen);
+    width: 1.4em;
+    height: 1.4em;
+    /* font-family: serif;
+    font-weight: bold; */
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.5em;/*현재 사이즈에서 계산*/
+    border-radius: 50%;
+    text-indent: -1rem;
+}
 .description .face1:before{
     content: "01";
 }
@@ -120,4 +143,68 @@ body{
 }
 .description .face3:before{
     content: "03";
+}
+/* 첫번째,마지막 태그는 margin보다는 padding 사용하기 */
+#md{
+    justify-content: center;
+   padding-bottom: 7rem;
+}
+
+#md h2,
+#thumb h2{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--colorDGreen);
+    margin-bottom: 3rem;
+}
+#md h2 strong,
+#thumb strong{
+    position: relative;
+}
+#md h2 strong >span,
+#thumb h2 strong >span{
+    position: relative;/*포지선 지정시 z-index 순위가 높아짐*/
+}
+#md h2 strong:before,
+#thumb h2 strong:before{
+    content: "";
+    position: absolute;
+    left: 0;right: 0;bottom: 0;
+    height: 40%;
+    background-color: var(--colorYellow);
+}
+
+#md .explain li{
+    border: 1px solid var(--colorDGreen);
+    padding:0 1rem;
+    border-radius: 2rem;
+    line-height: 2;
+    margin: 0 0.5rem 0 0;
+}
+
+#md .explain p{
+    margin: 3rem 0;
+    font-size: 2em;
+}
+
+#md .explain a{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 1rem;
+    line-height: 2.5;
+    padding: 0 2rem;
+    border-radius: 3rem;
+    background-color: var(--colorBtn);
+}
+
+#md .girls{
+    max-width: 512px;
+    width: 40%;
+    margin: 0 5%;
+}
+
+#thumb{
+    background-color: var(--colorGBg);
+    padding: 5rem 0;
 }
